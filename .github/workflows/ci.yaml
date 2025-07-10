@@ -24,7 +24,7 @@ jobs:
        run: docker build -t biladocker2009/complete-devops-project:${{ env.SHORT_SHA }} .
 
      - name: Login to Dockerhub
-       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "{{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
      - name: push to Dockerhub
        run: docker push biladocker2009/complete-devops-project:${{ env.SHORT_SHA }}
